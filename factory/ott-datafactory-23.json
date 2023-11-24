@@ -1,0 +1,9 @@
+{
+	"name": "ott-datafactory-23",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5900d41b-5895-426c-84b8-a9a584471b80",
+		"tenantId": "c794a269-2e9b-4777-ad46-2d19d81196d6"
+	}
+}
