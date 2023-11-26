@@ -1,0 +1,70 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "datafactory11023"
+		},
+		"LS_ Keyvault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ottvault0023.vault.azure.net/"
+		},
+		"LS_Onprem_File_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Users\\mahesh\\Downloads\\Host"
+		},
+		"LS_Onprem_File_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "mahesh"
+		},
+		"LS_adls_Ingest_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://ottadls23.dfs.core.windows.net"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "datafactory11023_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_ Keyvault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('LS_ Keyvault_properties_typeProperties_baseUrl')]"
+					},
+					"LS_Onprem_File_properties_typeProperties_host": {
+						"value": "[parameters('LS_Onprem_File_properties_typeProperties_host')]"
+					},
+					"LS_Onprem_File_properties_typeProperties_userId": {
+						"value": "[parameters('LS_Onprem_File_properties_typeProperties_userId')]"
+					},
+					"LS_adls_Ingest_properties_typeProperties_url": {
+						"value": "[parameters('LS_adls_Ingest_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

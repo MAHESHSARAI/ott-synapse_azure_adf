@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactory11023"
+		},
+		"LS_ Keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://ottvault0023.vault.azure.net/"
+		},
+		"LS_Onprem_File_properties_typeProperties_host": {
+			"value": "C:\\Users\\mahesh\\Downloads\\Host"
+		},
+		"LS_Onprem_File_properties_typeProperties_userId": {
+			"value": "mahesh"
+		},
+		"LS_adls_Ingest_properties_typeProperties_url": {
+			"value": "https://ottadls23.dfs.core.windows.net"
+		}
+	}
+}
